@@ -20,7 +20,7 @@
                     <i *ngIf="!refreshing" class="fas fa-sync"></i><span>Acortar</span></button>
                     </div>
                 </form> 
-                <p *ngIf="shortUrl">El link generado es: <a [href]="shortUrl">{{shortUrl}}</a></p>             
+                <p *ngIf="shortUrl">El link generado es: <a [href]="shortUrl" target="_blank" rel="noreferrer noopener">{{shortUrl}}</a></p>             
             </div>
         </div>  
     </div>
