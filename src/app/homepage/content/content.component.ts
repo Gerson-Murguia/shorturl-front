@@ -37,7 +37,7 @@ export class ContentComponent implements OnInit {
       (error:HttpErrorResponse)=>{
         //TODO: enviar notificacion de error
         this.refreshing=false;
-        //TODO: agregar cors al backend
+        //TODO: agregar cors al backendter
       },
       ()=>{
 
