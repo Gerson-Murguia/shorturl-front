@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UrlService } from '../../service/url.service';
 
 @Component({
   selector: 'app-content',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
+  
+  public refreshing: boolean=false;
 
-  constructor() { }
+  constructor(private urlService:UrlService) { }
 
   ngOnInit(): void {
+    //obtener urls del local cache
   }
 
+  public createShortUrl():void {
+    this.refreshing=true;
+  }
 }
