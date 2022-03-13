@@ -11,15 +11,16 @@
                 <h3 class="card-subtitle mb-2 text-muted"></h3>
                 <p class="card-text">Pega la url y dale click al botón "Acortar" para obtener tu url corta.
                 </p>
-                <form>
+                <form #shortUrlForm="ngForm" (ngSubmit)="createShortUrl(shortUrlForm)">
                     <div class="input-group mb-3">
-                    <input type="text" class="form-control form-control-lg" placeholder="Pega el link a acortar"
+                    <input type="text" ngModel name="originalUrl" class="form-control form-control-lg" placeholder="Pega el link a acortar"
                         aria-label="Entrada de link a acortar">
-                    <button class="btn btn-primary btn-lg" type="submit"><span>Acortar</span>
+                    <button class="btn btn-primary btn-lg" type="submit">
                     <i *ngIf="refreshing" class="fas fa-sync fa-spin"></i>
-                    <i *ngIf="!refreshing" class="fas fa-sync"></i></button>
+                    <i *ngIf="!refreshing" class="fas fa-sync"></i><span>Acortar</span></button>
                     </div>
-                </form>              
+                </form> 
+                <p *ngIf="shortUrl">El link generado es: {{shortUrl}}</p>             
             </div>
         </div>  
     </div>

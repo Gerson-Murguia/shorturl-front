@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Link } from '../model/link';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class UrlService {
 
  //falta mapear un modelo para el observable
 
-  public createShortUrl(url:string): Observable<any> { 
+  public createShortUrl(url:string): Observable<Link> { 
     return this.httpClient.post<any>(`${this.host}/`,url);
   }
 
