@@ -46,7 +46,8 @@
                 enlace corto y compártelo
                 en sitios web, chat y correo electrónico.</p>
         </section>
-        <section>
+        <section >
+            <h2>Historial de enlaces</h2>
             <div *ngIf="links" class="historial">
                 <!--TODO: Agregar historial local de links creados-->
                 <table class="table table-striped">
@@ -68,6 +69,9 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            <div  [hidden]="!links">
+                <p class="text-center">No hay enlaces que mostrar</p>
             </div>
         </section>
     </div>
