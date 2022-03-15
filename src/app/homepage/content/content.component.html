@@ -23,10 +23,16 @@
         </div>  
         <div *ngIf="shortUrl" class="card mt-5">
         <div class="card-body">
-            <h2 class="card-title">Acorta tus enlaces</h2>
+            <h2 class="card-title pb-3">Enlace corto listo!</h2>
             <h3 class="card-subtitle mb-2 text-muted"></h3>
             <p>El link generado es: <a [href]="shortUrl" target="_blank" rel="noreferrer noopener">{{shortUrl}}</a>
             </p>
+            <div class="row">
+                <div class="input-group">
+                    <input type="text" id="enlaceGenerado" class="form-control form-control-lg" [value]="shortUrl" readonly/>
+                    <button type="button" (click)="copiarTexto()" class="btn btn-outline-primary">COPIAR ENLACE</button>
+                </div>
+            </div>
         </div>
         </div>
        <section class="mt-5">
@@ -35,7 +41,6 @@
         Internet, solo pega el enlace largo y dale click al botón Acortar. El resultado aparecerá más abajo, copia el enlace corto y compártelo
         en sitios web, chat y correo electrónico.</p>
        </section>
-
     </div>
 </main>
 <app-footer></app-footer>

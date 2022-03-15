@@ -15,11 +15,13 @@ export class ContentComponent implements OnInit {
   private host=environment.apiUrl;
   public refreshing: boolean=false;
   public shortUrl: string="";
+  public toolTip:string="Copiar enlace";
 
   constructor(private urlService:UrlService) { }
 
   ngOnInit(): void {
     //TODO: obtener urls del local cache
+    
   }
 
   public createShortUrl(shortUrlForm:NgForm):void {
@@ -43,5 +45,10 @@ export class ContentComponent implements OnInit {
 
       }
     );
+  }
+
+  public copiarTexto(){
+    let enlaceGenerado:string=(document.getElementById("enlaceGenerado") as HTMLInputElement).value;
+    navigator.clipboard.writeText(enlaceGenerado);
   }
 }
