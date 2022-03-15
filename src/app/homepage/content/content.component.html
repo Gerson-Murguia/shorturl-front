@@ -63,8 +63,8 @@
                         <!--looping en las variables de cache-->
                         <tr *ngFor="let l of links; let indice=index">
                             <th scope="row">{{indice+1}}</th>
-                            <td><a [href]="l.originalUrl" rel="noopener noreferer" ></a></td>
-                            <td><a [href]="l.shortUrl" rel="noopener noreferer"></a></td>
+                            <td><a [href]="l.originalUrl" rel="noopener noreferer" >{{l.originalUrl}}</a></td>
+                            <td><a [href]="l.shortUrl" rel="noopener noreferer">{{l.shortUrl}}</a></td>
                             <td>{{l.createdAt | date: 'dd/MM/yyyy hh:mm'}}</td>
                         </tr>
                     </tbody>
