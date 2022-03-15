@@ -48,7 +48,7 @@
         </section>
         <section >
             <h2>Historial de enlaces</h2>
-            <div *ngIf="links" class="historial">
+            <div *ngIf="links.length!=0" class="historial">
                 <!--TODO: Agregar historial local de links creados-->
                 <table class="table table-striped">
                     <thead>
@@ -63,15 +63,12 @@
                         <!--looping en las variables de cache-->
                         <tr *ngFor="let l of links; let indice=index">
                             <th scope="row">{{indice+1}}</th>
-                            <td>{{l.originalUrl}}</td>
-                            <td>{{l.shortUrl}}</td>
+                            <td><a [href]="l.originalUrl" rel="noopener noreferer" ></a></td>
+                            <td><a [href]="l.shortUrl" rel="noopener noreferer"></a></td>
                             <td>{{l.createdAt | date: 'dd/MM/yyyy hh:mm'}}</td>
                         </tr>
                     </tbody>
                 </table>
-            </div>
-            <div  [hidden]="!links">
-                <p class="text-center">No hay enlaces que mostrar</p>
             </div>
         </section>
     </div>
