@@ -12,7 +12,7 @@ import { UrlService } from '../../service/url.service';
 })
 export class ContentComponent implements OnInit {
   
-  private host=environment.apiUrl;
+  public host=environment.apiUrl;
   public refreshing: boolean=false;
   public shortUrl: string="";
   public toolTip:string="Copiar enlace";

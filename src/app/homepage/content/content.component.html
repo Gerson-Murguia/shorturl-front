@@ -7,20 +7,23 @@
         <div class="card mt-5">
             <div class="card-body">
                 <h2 class="card-title">Acorta tus enlaces</h2>
-                <h3 class="card-subtitle mb-2 text-muted"></h3>
-                <p class="card-text">Pega la url y dale click al botón "Acortar" para obtener tu url corta.
-                </p>
+                <h5 class="card-subtitle mb-2 text-muted">Pega la url y dale click al botón "Acortar" para obtener tu url corta.</h5>
                 <form #shortUrlForm="ngForm" (ngSubmit)="createShortUrl(shortUrlForm)">
                     <div class="input-group mb-3">
-                    <input type="text" ngModel name="originalUrl" class="form-control form-control-lg" placeholder="Pega el link a acortar"
-                        aria-label="Entrada de link a acortar">
-                    <button class="btn btn-primary btn-lg" type="submit">
-                    <i *ngIf="refreshing" class="fas fa-sync fa-spin"></i>
-                    <i *ngIf="!refreshing" class="fas fa-sync"></i><span>Acortar</span></button>
+                        <input type="text" ngModel name="originalUrl" class="form-control form-control-lg" placeholder="Pega el link a acortar"
+                            aria-label="Entrada de link a acortar">
+                        <button class="btn btn-primary btn-lg" type="submit">
+                        <i *ngIf="refreshing" class="fas fa-sync fa-spin"></i>
+                        <i *ngIf="!refreshing" class="fas fa-sync"></i><span>Acortar</span></button>
+                    </div>
+                    <span>O crea un link personalizado</span>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon3">{{host}}</span>
+                        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
                     </div>
                 </form> 
             </div>
-        </div>  
+        </div>         
         <div *ngIf="shortUrl" class="card mt-5">
         <div class="card-body">
             <h2 class="card-title pb-3">Enlace corto listo!</h2>
@@ -36,10 +39,10 @@
         </div>
         </div>
        <section class="mt-5">
-        <h2>Acortador de enlaces simple y rápido!</h2>
-        <p>Minilink te permite reducir los enlaces largos de Instagram, Facebook, YouTube, Twitter, Linked In y los sitios más conocidos en
-        Internet, solo pega el enlace largo y dale click al botón Acortar. El resultado aparecerá más abajo, copia el enlace corto y compártelo
-        en sitios web, chat y correo electrónico.</p>
+            <h2>Acortador de enlaces simple y rápido!</h2>
+            <p>Minilink te permite reducir los enlaces largos de Instagram, Facebook, YouTube, Twitter, Linked In y los sitios más conocidos en
+            Internet, solo pega el enlace largo y dale click al botón Acortar. El resultado aparecerá más abajo, copia el enlace corto y compártelo
+            en sitios web, chat y correo electrónico.</p>
        </section>
     </div>
 </main>
