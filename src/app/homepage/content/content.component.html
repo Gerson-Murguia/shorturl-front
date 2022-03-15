@@ -39,7 +39,7 @@
         </div>
         </div>
         <section class="mt-5">
-            <h2>Acortador de enlaces simple y rápido!</h2>
+            <h3>Acortador de enlaces simple y rápido!</h3>
             <p>Minilink te permite reducir los enlaces largos de Instagram, Facebook, YouTube, Twitter, Linked In y los sitios
                 más conocidos en
                 Internet, solo pega el enlace largo y dale click al botón Acortar. El resultado aparecerá más abajo, copia el
@@ -47,8 +47,8 @@
                 en sitios web, chat y correo electrónico.</p>
         </section>
         <section >
-            <h2>Historial de enlaces</h2>
-            <div *ngIf="links.length!=0" class="historial">
+            <h3>Historial de enlaces</h3>
+            <div *ngIf="links.length>0;else vacio" class="historial">
                 <!--TODO: Agregar historial local de links creados-->
                 <table class="table table-striped">
                     <thead>
@@ -70,6 +70,9 @@
                     </tbody>
                 </table>
             </div>
+            <ng-template #vacio>
+                <p class="text-center">No hay elementos para mostrar</p>
+            </ng-template>           
         </section>
     </div>
 </main>
