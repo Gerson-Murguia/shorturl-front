@@ -10,16 +10,16 @@
                 <h5 class="card-subtitle mb-2 text-muted">Pega la url y dale click al botón "Acortar" para obtener tu url corta.</h5>
                 <form #shortUrlForm="ngForm" (ngSubmit)="createShortUrl(shortUrlForm)">
                     <div class="input-group mb-3">
-                        <input type="text" ngModel name="originalUrl" class="form-control form-control-lg" placeholder="Pega el link a acortar"
+                        <input type="text" ngModel name="originalUrl" class="form-control form-control-lg" placeholder="Ingresa el enlace"
                             aria-label="Entrada de link a acortar">
                         <button class="btn btn-primary btn-lg" type="submit">
                         <i *ngIf="refreshing" class="fas fa-sync fa-spin"></i>
                         <i *ngIf="!refreshing" class="fas fa-sync"></i><span>Acortar</span></button>
                     </div>
-                    <span>O crea un link personalizado</span>
-                    <div class="input-group">
-                        <span class="input-group-text" id="basic-addon3">{{host}}</span>
-                        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                    <span class="">O crea un link personalizado (máximo de 20 caracteres)</span>
+                    <div class="input-group w-50 mt-3">
+                        <span class="input-group-text" id="basic-addon3">{{host}}/  </span>
+                        <input type="text" class="form-control" id="basic-url" name="personalizedUrl" maxlength="20">
                     </div>
                 </form> 
             </div>
@@ -43,6 +43,30 @@
             <p>Minilink te permite reducir los enlaces largos de Instagram, Facebook, YouTube, Twitter, Linked In y los sitios más conocidos en
             Internet, solo pega el enlace largo y dale click al botón Acortar. El resultado aparecerá más abajo, copia el enlace corto y compártelo
             en sitios web, chat y correo electrónico.</p>
+       </section>
+       <section>
+           <div *ngIf="links" class="historial">
+                <!--TODO: Agregar historial local de links creados-->
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Enlace original</th>
+                            <th scope="col">Enlace corto</th>
+                            <th scope="col">Fecha de creación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--looping en las variables de cache-->
+                        <tr *ngFor="let l of links; let indice=index">
+                            <th scope="row">{{indice+1}}</th>
+                            <td>{{l.originalUrl}}</td>
+                            <td>{{l.shortUrl}}</td>
+                            <td>{{l.createdAt}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+           </div>
        </section>
     </div>
 </main>
