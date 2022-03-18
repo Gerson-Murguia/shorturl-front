@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import localeEs from '@angular/common/locales/es';
 import { HomepageModule } from './homepage/homepage.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 registerLocaleData(localeEs,'es');
 @NgModule({
@@ -14,7 +15,8 @@ registerLocaleData(localeEs,'es');
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomepageModule
+    HomepageModule,
+    FlexLayoutModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent]
