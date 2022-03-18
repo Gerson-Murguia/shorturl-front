@@ -4,7 +4,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
 
 html, body {
-  min-height: 100vh;
-  height: auto;
+  height:100%;
+  background-color: lightcoral;
+  display:flex;
+  flex-direction: column;
   margin: 0;
+  padding: 0;
 }
+
+main {
+  flex-grow: 1;
+  background-color:khaki
+}
+
+footer {
+    width:100%;
+    padding:20px;
+    background-color: lightblue;
+    flex-shrink: 0;
+}
+
