@@ -15,7 +15,7 @@ export class ContentComponent implements OnInit {
   
   public host=environment.apiUrl;
   public refreshing: boolean=false;
-  public shortUrl: string="";
+  public shortUrl: string="Claro";
   public toolTip:string="Copiar enlace";
   public links:Shortlink[]=[];
   constructor(private urlService:UrlService) { }
