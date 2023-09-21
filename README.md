@@ -1,6 +1,7 @@
 # UrlShortener
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
+Desplegado en Netlify: https://minilink.netlify.app/
 
 ## Development server
 
